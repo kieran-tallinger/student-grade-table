@@ -5,10 +5,10 @@ class App {
   }
   getGrades() {
     $.ajax({
-      method: 'GET'
-      url:'http://sgt.lfzprototypes.com/api/grades'
-      headers: {"X-Access-Token": 'od2BPKJo'}
-      success: this.handleGetGradesSuccess
+      method: 'GET',
+      url:'http://sgt.lfzprototypes.com/api/grades',
+      headers: {"X-Access-Token": 'od2BPKJo'},
+      success: this.handleGetGradesSuccess,
       error: this.handleGetGradesError
     })
   }
