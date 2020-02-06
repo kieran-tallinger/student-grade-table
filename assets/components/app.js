@@ -22,5 +22,10 @@ class App {
   }
   handleGetGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades);
+    var newAverage = 0;
+    grades.forEach(function (student) {
+      newAverage += student.grade;
+    });
+    this.pageHeader.updateAverage(newAverage);
   }
 }
