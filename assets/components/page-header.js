@@ -3,6 +3,7 @@ class PageHeader {
     this.headerElement = headerElement;
   }
   updateAverage (newAverage){
-    console.log(newAverage);
+    var headerElement = document.getElementById('badge-for-average');
+    headerElement.textContent = newAverage;
   }
 }
