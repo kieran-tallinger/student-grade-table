@@ -26,6 +26,6 @@ class App {
     grades.forEach(function (student) {
       newAverage += student.grade;
     });
-    this.pageHeader.updateAverage(newAverage);
+    this.pageHeader.updateAverage(newAverage/grades.length);
   }
 }
