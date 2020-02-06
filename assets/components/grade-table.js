@@ -10,17 +10,15 @@ class GradeTable {
     for (var tableIndex = 0; tableIndex < grades.length; tableIndex++) {
       var newTableRow = document.createElement('tr');
       tableEl.appendChild(newTableRow)
-      for (var dataIndex = 0; dataIndex < 3; dataIndex++) {
-        var newTableData = document.createElement('td');
-        if (dataIndex === 0) {
-          newTableData.textContent = grades[tableIndex].name;
-        } else if (dataIndex === 1) {
-          newTableData.textContent = grades[tableIndex].course;
-        } else if (dataIndex === 2) {
-          newTableData.textContent = grades[tableIndex].grade;
-        }
-        newTableRow.appendChild(newTableData);
-      }
+      var newTableDataName = document.createElement('td');
+      newTableDataName.textContent = grades[tableIndex].name;
+      newTableRow.appendChild(newTableDataName);
+      var newTableDataCourse = document.createElement('td');
+      newTableDataCourse.textContent = grades[tableIndex].course;
+      newTableRow.appendChild(newTableDataCourse);
+      var newTableDataGrade = document.createElement('td');
+      newTableDataGrade.textContent = grades[tableIndex].grade;
+      newTableRow.appendChild(newTableDataGrade);
     }
   }
 }
