@@ -22,6 +22,5 @@ class GradeTable {
         newTableRow.appendChild(newTableData);
       }
     }
-    console.log(grades)
   }
 }
