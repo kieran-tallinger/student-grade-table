@@ -17,9 +17,9 @@ class App {
     this.getGrades();
   }
   handleGetGradesError(error) {
-    console.error(error)
+    console.error(error);
   }
   handleGetGradesSuccess(grades) {
-    this.gradeTable.updateGrades(grades)
+    this.gradeTable.updateGrades(grades);
   }
 }
