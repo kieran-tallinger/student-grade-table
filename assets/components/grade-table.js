@@ -6,14 +6,13 @@ class GradeTable {
   }
   updateGrades(grades){
     var tableEl = this.tableElement;
-    var noGradesMessage = document.getElementById('message');
     if (grades.length === 0) {
-      noGradesMessage.classList.remove('d-none');
+      this.noGradesElement.classList.remove('d-none');
       while (tableEl.firstChild) {
         tableEl.removeChild(tableEl.firstChild);
       };
     } else if(grades) {
-      noGradesMessage.classList.add('d-none');
+      this.noGradesElement.classList.add('d-none');
       while (tableEl.firstChild) {
         tableEl.removeChild(tableEl.firstChild);
       };
