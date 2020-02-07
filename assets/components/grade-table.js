@@ -21,4 +21,7 @@ class GradeTable {
       newTableRow.appendChild(newTableDataGrade);
     }
   }
+  onDeleteClick(deleteGrade) {
+    this.deleteGrade = deleteGrade;
+  }
 }
