@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Grade Table</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body class="container">
@@ -13,22 +14,44 @@
       <h1 class="col-8">Student Grade Table</h1>
       <h2 class="col-4 text-right">Average Grade<span class="px-2"></span><span id="badge-for-average" class="badge badge-secondary px-4">--</span></h2>
     </header>
-    <table class="table table-bordered table-striped table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Student Name</th>
-          <th scope="col"> Course</th>
-          <th scope="col"> Grade</th>
-        </tr>
-      </thead>
-      <tbody id = 'table'>
+    <div class="row">
+      <table class="table table-bordered table-striped table-hover col-8">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col"> Course</th>
+            <th scope="col"> Grade</th>
+          </tr>
+        </thead>
+        <tbody id = 'table'>
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      <form id="form" action="" class="col-4">
+        <div class="form-row my-2">
+          <i class="col-1 fas fa-user py-2 mx-2 fa-lg"></i>
+          <input id="name-input" class="col" type="text" name="name" placeholder="Name">
+        </div>
+        <div class="form-row my-2">
+          <i class="col-1 far fa-list-alt py-2 mx-2 fa-lg"></i>
+          <input id="course-input" class="col" type="text" name="course" placeholder="Course">
+        </div>
+        <div class="form-row my-2">
+          <i class="col-1 fas fa-graduation-cap py-2 mx-2 fa-lg"></i>
+          <input id="grade-input" class="col" type="text" name="grade" placeholder="Grade">
+        </div>
+        <div class="form-row my-3">
+          <div class="col-6"></div>
+          <button type="submit" class="col-2 btn btn-secondary mx-1">Add</button>
+          <button type="reset" class="col-3 btn btn-secondary mx-1">Cancel</button>
+        </div>
+      </form>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="assets/components/page-header.js"></script>
     <script src="assets/components/app.js"></script>
     <script src="assets/components/grade-table.js"></script>
+    <script src="assets/components/grade-form.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
