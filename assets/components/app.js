@@ -36,6 +36,15 @@ class App {
       error: this.handleCreateGradeError
     })
   }
+  deleteGrade(id){
+    console.log(id);
+  }
+  handleDeleteGradeError(error){
+    console.error(error);
+  }
+  handleDeleteGradeSuccess(){
+    this.getGrades();
+  }
   handleCreateGradeError(error){
     console.error(error);
   }
