@@ -35,13 +35,19 @@ class App {
         "course": course,
         "grade": grade
       },
-      headers: { "X-Access-Token": "od2BPKJo"},
+      headers: {"X-Access-Token": "od2BPKJo"},
       success: this.handleCreateGradeSuccess,
       error: this.handleCreateGradeError
     })
   }
   deleteGrade(id){
-    console.log(id);
+    $.ajax({
+      method: 'DELETE',
+      url: 'http://sgt.lfzprototypes.com/api/grades/' + id,
+      headers: {"X-Access-Token": "od2BPKJo"},
+      success: this.handleDeleteGradeSuccess,
+      error: this.handleDeleteGradeError
+    })
   }
   handleDeleteGradeError(error){
     console.error(error);
@@ -64,7 +70,12 @@ class App {
     grades.forEach(function (student) {
       newSum += student.grade;
     });
-    var newAverage = newSum/grades.length
-    this.pageHeader.updateAverage(newAverage.toPrecision(2));
+    var newAverage = (newSum/grades.length)
+    var perciseAverage = newAverage.toFixed(2);
+    if (newAverage){
+      this.pageHeader.updateAverage(perciseAverage);
+    } else {
+      this.pageHeader.textContent = '--';
+    }
   }
 }

@@ -7,8 +7,11 @@ class GradeTable {
   updateGrades(grades){
     var tableEl = this.tableElement;
     var noGradesMessage = document.getElementById('message');
-    if (!grades) {
+    if (grades.length === 0) {
       noGradesMessage.classList.remove('d-none');
+      while (tableEl.firstChild) {
+        tableEl.removeChild(tableEl.firstChild);
+      };
     } else if(grades) {
       noGradesMessage.classList.add('d-none');
       while (tableEl.firstChild) {
