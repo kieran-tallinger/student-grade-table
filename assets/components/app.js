@@ -72,10 +72,10 @@ class App {
     });
     var newAverage = (newSum/grades.length)
     var perciseAverage = newAverage.toFixed(2);
-    if (newAverage){
+    if (grades.length > 0){
       this.pageHeader.updateAverage(perciseAverage);
-    } else {
-      this.pageHeader.textContent = '--';
+    } else if (grades.length === 0){
+      this.pageHeader.updateAverage(newSum);
     }
   }
 }
