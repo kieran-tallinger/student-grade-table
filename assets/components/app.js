@@ -24,6 +24,7 @@ class App {
   start(){
     this.getGrades();
     this.gradeForm.onSubmit(this.createGrade);
+    this.gradeTable.onDeleteClick(this.deleteGrade);
   }
   createGrade(name,course,grade){
     $.ajax({
@@ -59,10 +60,11 @@ class App {
   }
   handleGetGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades);
-    var newAverage = 0;
+    var newSum = 0;
     grades.forEach(function (student) {
-      newAverage += student.grade;
+      newSum += student.grade;
     });
-    this.pageHeader.updateAverage(newAverage/grades.length);
+    var newAverage = newSum/grades.length
+    this.pageHeader.updateAverage(newAverage.toPrecision(2));
   }
 }

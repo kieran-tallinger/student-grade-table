@@ -6,11 +6,17 @@ class GradeTable {
   }
   updateGrades(grades){
     var tableEl = this.tableElement;
-    while (tableEl.firstChild) {
-      tableEl.removeChild(tableEl.firstChild);
-    };
-    for (var tableIndex = 0; tableIndex < grades.length; tableIndex++) {
-      this.renderGradeRow(grades[tableIndex],this.deleteGrade);
+    var noGradesMessage = document.getElementById('message');
+    if (!grades) {
+      noGradesMessage.classList.remove('d-none');
+    } else if(grades) {
+      noGradesMessage.classList.add('d-none');
+      while (tableEl.firstChild) {
+        tableEl.removeChild(tableEl.firstChild);
+      };
+      for (var tableIndex = 0; tableIndex < grades.length; tableIndex++) {
+        tableEl.appendChild(this.renderGradeRow(grades[tableIndex],this.deleteGrade));
+      }
     }
   }
   onDeleteClick(deleteGrade) {
@@ -32,7 +38,7 @@ class GradeTable {
     var newButton = document.createElement('button');
     newButton.textContent = 'DELETE';
     newButton.addEventListener('click', function(){
-      this.deleteGrade(data.id);
+      deleteGrade(data.id);
     })
     newTableDataButtonSpot.appendChild(newButton);
     return newTableRow;
